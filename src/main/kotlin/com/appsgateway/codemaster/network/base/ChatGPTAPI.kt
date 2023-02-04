@@ -34,7 +34,7 @@ class ChatGPTAPI {
         var data = ApiRequest(prompt);
 
         if (operation == OPERATIONTYPE.DOCUMENTATION) {
-            data.input = "Write a documentation for the following code snippet:$prompt";
+            data.instruction = "Write a documentation for the following code snippet:$prompt";
         }
 
         val result = fetchData( "edits", data).await();
