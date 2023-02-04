@@ -29,11 +29,15 @@ class ChatGPTAPI {
         get() =// get API key
             ""
 
-    suspend fun getResponseFromChatGPT(prompt: String?): String {
+    suspend fun getResponseFromChatGPT(prompt: String?, operation: OPERATIONTYPE): String {
 
         var data = ApiRequest(prompt);
 
-        val result = fetchData(BASE_URL + "edits", data).await();
+        if (operation == OPERATIONTYPE.DOCUMENTATION) {
+            data.input = "Write a documentation for the following code snippet:$prompt";
+        }
+
+        val result = fetchData( "edits", data).await();
 
         return result.choices[0].text;
 

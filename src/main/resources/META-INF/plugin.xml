@@ -88,8 +88,8 @@
 
         <action id="EditorBasics.EditorIllustrationAction"
                 class="com.appsgateway.codemaster.editor.EditorIllustrationAction"
-                text="Editor Replace Text"
-                description="Replaces selected text with 'Replacement'."
+                text="Write documentation for code"
+                description="Replaces selected text Write documentation for code"
                 icon="SdkIcons.Sdk_default_icon">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>

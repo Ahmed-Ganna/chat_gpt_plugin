@@ -2,12 +2,13 @@ package com.appsgateway.codemaster.network.model
 
 
 data class ApiRequest(
-    val input: String?,
-    val instruction: String? = "",
-    val model: String? = "text-davinci-edit-001",
-    val temperature: Double? = 0.7,
+    var input: String?,
+    var instruction: String? = "",
+    var prompt: String? = "",
+    val model: String? = "text-davinci-002",
+    val temperature: Double? = 0.5,
+    val max_tokens: Int = 100,
     val top_p: Int? = 1
-){
-    constructor() : this("","","text-davinci-edit-001",0.7,1)
+) {
 
 }

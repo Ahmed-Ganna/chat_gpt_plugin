@@ -2,6 +2,7 @@
 package com.appsgateway.codemaster.editor
 
 import com.appsgateway.codemaster.network.base.ChatGPTAPI
+import com.appsgateway.codemaster.network.base.OPERATIONTYPE
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
@@ -37,7 +38,7 @@ class EditorIllustrationAction : AnAction() {
         ) {
             runBlocking {
                 val result = ChatGPTAPI.getInstance()
-                    .getResponseFromChatGPT(document.text.substring(start, end));
+                    .getResponseFromChatGPT(document.text.substring(start, end),OPERATIONTYPE.DOCUMENTATION);
 
                 document.replaceString(start, end, result)
             }
