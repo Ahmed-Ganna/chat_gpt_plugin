@@ -9,5 +9,6 @@ import javax.swing.*;
 public class SdkIcons {
 
   public static final Icon Sdk_default_icon = IconLoader.getIcon("/icons/sdk_16.svg", SdkIcons.class);
+  public static final Icon DOCUMENTICON = IconLoader.getIcon("/icons/notebook-svgrepo-com.svg", SdkIcons.class);
 
 }

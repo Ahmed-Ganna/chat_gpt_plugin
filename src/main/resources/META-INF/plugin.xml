@@ -90,7 +90,7 @@
                 class="com.appsgateway.codemaster.editor.EditorIllustrationAction"
                 text="Write documentation for code"
                 description="Replaces selected text Write documentation for code"
-                icon="SdkIcons.Sdk_default_icon">
+                icon="SdkIcons.DOCUMENTICON">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
         <action id="EditorBasics.EditorHandlerIllustration"
