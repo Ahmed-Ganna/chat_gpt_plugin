@@ -1,10 +1,13 @@
 // Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
 package com.appsgateway.codemaster.editor
 
+import com.appsgateway.codemaster.network.base.ChatGPTAPI
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.command.WriteCommandAction
+import kotlinx.coroutines.*
+import java.net.URL
 
 /**
  * Menu action to replace a selection of characters with a fixed string.
@@ -31,10 +34,19 @@ class EditorIllustrationAction : AnAction() {
         // Must do this document change in a write action context.
         WriteCommandAction.runWriteCommandAction(
             project
-        ) { document.replaceString(start, end, "editor_basics") }
+        ) {
+            runBlocking {
+                val result = ChatGPTAPI.getInstance()
+                    .getResponseFromChatGPT(document.text.substring(start, end));
+
+                document.replaceString(start, end, result)
+            }
+
+        }
         // De-select the text range that was just replaced
         primaryCaret.removeSelection()
     }
+
 
     /**
      * Sets visibility and enables this action menu item if:
