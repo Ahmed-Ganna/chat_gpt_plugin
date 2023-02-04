@@ -9,6 +9,9 @@
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="com.appsgateway.codemaster.services.MyApplicationService"/>
         <projectService serviceImplementation="com.appsgateway.codemaster.services.MyProjectService"/>
+
+        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.General.Modified" anchor="right"
+                factoryClass="com.appsgateway.codemaster.toolWindow.MyToolWindowFactory"/>
     </extensions>
 <!--    <resource-bundle>messages.MyBundle</resource-bundle>-->
 
@@ -80,6 +83,33 @@
                icon="SdkIcons.Sdk_default_icon">
             <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>
         </group>
+
+
+
+        <action id="EditorBasics.EditorIllustrationAction"
+                class="com.appsgateway.codemaster.editor.EditorIllustrationAction"
+                text="Editor Replace Text"
+                description="Replaces selected text with 'Replacement'."
+                icon="SdkIcons.Sdk_default_icon">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="EditorBasics.EditorHandlerIllustration"
+                class="com.appsgateway.codemaster.editor.EditorHandlerIllustration"
+                text="Editor Add Caret"
+                description="Adds a second caret below the existing one."
+                icon="SdkIcons.Sdk_default_icon">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <!-- Place this entry first in the popup menu; it's always enabled if a project and editor are open -->
+        <action id="EditorBasics.LogicalPositionIllustration"
+                class="com.appsgateway.codemaster.editor.EditorAreaIllustration"
+                text="Caret Position"
+                description="Reports information about the caret position."
+                icon="SdkIcons.Sdk_default_icon">
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+
     </actions>
 
 </idea-plugin>
