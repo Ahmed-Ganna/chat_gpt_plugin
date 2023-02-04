@@ -1,4 +1,4 @@
-package com.github.ahmedganna.chatgptplugin
+package com.appsgateway.codemaster
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
