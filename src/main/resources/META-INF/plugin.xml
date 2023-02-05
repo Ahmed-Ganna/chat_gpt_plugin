@@ -7,17 +7,20 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.appsgateway.codemaster.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.appsgateway.codemaster.services.MyProjectService"/>
+        <applicationService
+                serviceImplementation="com.appsgateway.codemaster.services.MyApplicationService" />
+        <projectService
+                serviceImplementation="com.appsgateway.codemaster.services.MyProjectService" />
 
-        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.General.Modified" anchor="right"
-                factoryClass="com.appsgateway.codemaster.toolWindow.MyToolWindowFactory"/>
+        <toolWindow id="Sample Calendar" secondary="true" icon="AllIcons.General.Modified"
+                anchor="right"
+                factoryClass="com.appsgateway.codemaster.toolWindow.MyToolWindowFactory" />
     </extensions>
-<!--    <resource-bundle>messages.MyBundle</resource-bundle>-->
+    <!--    <resource-bundle>messages.MyBundle</resource-bundle>-->
 
     <applicationListeners>
         <listener class="com.appsgateway.codemaster.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
+                topic="com.intellij.openapi.project.ProjectManagerListener" />
     </applicationListeners>
 
 
@@ -34,13 +37,15 @@
           element and see how the menu text changes.) The alternate text and description attributes do not
           appear here because they are defined by action-id in the resource-bundle.
         -->
-        <action id="org.intellij.sdk.action.PopupDialogAction" class="com.appsgateway.codemaster.action.PopupDialogAction"
+        <action id="org.intellij.sdk.action.PopupDialogAction"
+                class="com.appsgateway.codemaster.action.PopupDialogAction"
                 text="Action Basics Plugin: Pop Dialog Action" description="SDK action example"
                 icon="SdkIcons.Sdk_default_icon">
-            <add-to-group group-id="ToolsMenu" anchor="first"/>
-            <override-text place="MainMenu" text="Pop Dialog Action"/>
-            <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C" keymap="$default"/>
-            <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default"/>
+            <add-to-group group-id="ToolsMenu" anchor="first" />
+            <override-text place="MainMenu" text="Pop Dialog Action" />
+            <keyboard-shortcut first-keystroke="control alt A" second-keystroke="C"
+                    keymap="$default" />
+            <mouse-shortcut keystroke="control button3 doubleClick" keymap="$default" />
         </action>
         <!--
           All of the following menu groups add the action PopupDialogAction to menus in different ways.
@@ -52,14 +57,15 @@
           enable/disable conditions. Instead it must rely on the conditions imposed by the parent menu where it is inserted.
           It declares one action in the group.
         -->
-        <group id="org.intellij.sdk.action.GroupedActions"
-               text="Static Grouped Actions" description="SDK statically grouped action example"
-               popup="true" icon="SdkIcons.Sdk_default_icon">
-            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.PopupDialogAction"/>
-            <action id="org.intellij.sdk.action.GroupPopDialogAction" class="com.appsgateway.codemaster.action.PopupDialogAction"
+        <group id="org.intellij.sdk.action.GroupedActions" text="Static Grouped Actions"
+                description="SDK statically grouped action example" popup="true"
+                icon="SdkIcons.Sdk_default_icon">
+            <add-to-group group-id="ToolsMenu" anchor="after"
+                    relative-to-action="org.intellij.sdk.action.PopupDialogAction" />
+            <action id="org.intellij.sdk.action.GroupPopDialogAction"
+                    class="com.appsgateway.codemaster.action.PopupDialogAction"
                     text="A Group Action" description="SDK static grouped action example"
-                    icon="SdkIcons.Sdk_default_icon">
-            </action>
+                    icon="SdkIcons.Sdk_default_icon"></action>
         </group>
         <!--
           CustomDefaultActionGroup demonstrates declaring an action group based on a ActionGroup class supplied by this
@@ -68,46 +74,56 @@
           description attributes. Instead, the information is defined in the BasicActionsBundle.
         -->
         <group id="org.intellij.sdk.action.CustomDefaultActionGroup"
-               class="com.appsgateway.codemaster.action.CustomDefaultActionGroup"
-               popup="true">
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-            <action id="org.intellij.sdk.action.CustomGroupedAction" class="com.appsgateway.codemaster.action.PopupDialogAction"
-                    icon="SdkIcons.Sdk_default_icon"/>
+                class="com.appsgateway.codemaster.action.CustomDefaultActionGroup" popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+            <action id="org.intellij.sdk.action.CustomGroupedAction"
+                    class="com.appsgateway.codemaster.action.PopupDialogAction"
+                    icon="SdkIcons.Sdk_default_icon" />
         </group>
         <!--
           DynamicActionGroup demonstrates declaring an action group without a static action declaration.
           An action is added to the group programmatically in the DynamicActionGroup implementation.
         -->
-        <group id="org.intellij.sdk.action.DynamicActionGroup"  class="com.appsgateway.codemaster.action.DynamicActionGroup"
-               popup="true" text="Dynamically Grouped Actions" description="SDK dynamically grouped action example"
-               icon="SdkIcons.Sdk_default_icon">
-            <add-to-group group-id="ToolsMenu" anchor="after" relative-to-action="org.intellij.sdk.action.GroupedActions"/>
+        <group id="org.intellij.sdk.action.DynamicActionGroup"
+                class="com.appsgateway.codemaster.action.DynamicActionGroup" popup="true"
+                text="Dynamically Grouped Actions"
+                description="SDK dynamically grouped action example"
+                icon="SdkIcons.Sdk_default_icon">
+            <add-to-group group-id="ToolsMenu" anchor="after"
+                    relative-to-action="org.intellij.sdk.action.GroupedActions" />
         </group>
 
 
-
         <action id="EditorBasics.EditorIllustrationAction"
-                class="com.appsgateway.codemaster.editor.EditorIllustrationAction"
-                text="Write documentation for code"
+                class="com.appsgateway.codemaster.editor.EditorIllustrationDoumentationAction"
+                text="Write Documentation for Code"
                 description="Replaces selected text Write documentation for code"
                 icon="SdkIcons.DOCUMENTICON">
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
         </action>
+
+
+        <action id="EditorBasics.EditorIllustrationDescrintionAction"
+                class="com.appsgateway.codemaster.editor.EditorIllustrationDescriptionAction"
+                text="Description This Code" description="Description this code"
+                icon="SdkIcons.INFO">
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
+        </action>
+
+
         <action id="EditorBasics.EditorHandlerIllustration"
                 class="com.appsgateway.codemaster.editor.EditorHandlerIllustration"
-                text="Editor Add Caret"
-                description="Adds a second caret below the existing one."
+                text="Editor Add Caret" description="Adds a second caret below the existing one."
                 icon="SdkIcons.Sdk_default_icon">
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
         </action>
         <!-- Place this entry first in the popup menu; it's always enabled if a project and editor are open -->
         <action id="EditorBasics.LogicalPositionIllustration"
                 class="com.appsgateway.codemaster.editor.EditorAreaIllustration"
-                text="Caret Position"
-                description="Reports information about the caret position."
+                text="Caret Position" description="Reports information about the caret position."
                 icon="SdkIcons.Sdk_default_icon">
-            <keyboard-shortcut keymap="$default" first-keystroke="control alt G"/>
-            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt G" />
+            <add-to-group group-id="EditorPopupMenu" anchor="first" />
         </action>
 
     </actions>

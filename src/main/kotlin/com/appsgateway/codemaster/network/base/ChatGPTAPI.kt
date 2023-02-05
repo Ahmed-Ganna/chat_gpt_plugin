@@ -35,9 +35,13 @@ class ChatGPTAPI {
 
         if (operation == OPERATIONTYPE.DOCUMENTATION) {
             data.instruction = "Write a documentation for the following code snippet:$prompt";
+        } else if (operation == OPERATIONTYPE.SEARCH_ERROOR) {
+            data.instruction = "Write a code snippet to fix the following error:$prompt";
+        } else if (operation == OPERATIONTYPE.EXPLAN_THIS_CODE) {
+            data.instruction = "explain the following code snippet::$prompt";
         }
 
-        val result = fetchData( "edits", data).await();
+        val result = fetchData("edits", data).await();
 
         return result.choices[0].text;
 

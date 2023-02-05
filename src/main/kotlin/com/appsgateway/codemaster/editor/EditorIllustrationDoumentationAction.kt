@@ -8,14 +8,13 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.command.WriteCommandAction
 import kotlinx.coroutines.*
-import java.net.URL
 
 /**
  * Menu action to replace a selection of characters with a fixed string.
  *
  * @see AnAction
  */
-class EditorIllustrationAction : AnAction() {
+class EditorIllustrationDoumentationAction : AnAction() {
     /**
      * Replaces the run of text selected by the primary caret with a fixed string.
      *
