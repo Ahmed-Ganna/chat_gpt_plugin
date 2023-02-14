@@ -41,6 +41,8 @@ class ChatGPTAPI {
             data.instruction = "Write a code snippet to fix the following error:$prompt";
         } else if (operation == OPERATIONTYPE.EXPLAN_THIS_CODE) {
             data.instruction = "explain the following code snippet::$prompt";
+        }else if (operation == OPERATIONTYPE.UNITTEST){
+            data.instruction = "Write unit test for this code \n  code snippet::$prompt";
         }
 
         val result = fetchData("edits", data).await();

@@ -62,10 +62,6 @@
                 icon="SdkIcons.Sdk_default_icon">
             <add-to-group group-id="ToolsMenu" anchor="after"
                     relative-to-action="org.intellij.sdk.action.PopupDialogAction" />
-            <action id="org.intellij.sdk.action.GroupPopDialogAction"
-                    class="com.appsgateway.codemaster.action.PopupDialogAction"
-                    text="A Group Action" description="SDK static grouped action example"
-                    icon="SdkIcons.Sdk_default_icon"></action>
         </group>
         <!--
           CustomDefaultActionGroup demonstrates declaring an action group based on a ActionGroup class supplied by this
@@ -102,7 +98,13 @@
             <add-to-group group-id="EditorPopupMenu" anchor="first" />
         </action>
 
-
+        <action id="com.appsgateway.codemaster.action.TestFileCreatorAction"
+                class="com.appsgateway.codemaster.action.TestFileCreatorAction"
+                text="Create Test File" description="Create  test file"
+                icon="SdkIcons.Sdk_default_icon">
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt T" />
+            <add-to-group group-id="EditorPopupMenu"  anchor="first"/>
+        </action>
         <action id="EditorBasics.EditorIllustrationDescrintionAction"
                 class="com.appsgateway.codemaster.editor.EditorIllustrationDescriptionAction"
                 text="Description This Code" description="Description this code"
@@ -131,13 +133,7 @@
 
 
 
-        <action id="com.appsgateway.codemaster.action.TestFileCreatorAction"
-                class="com.appsgateway.codemaster.action.TestFileCreatorAction"
-                text="Create Test File" description="Create flutter test file"
-            icon="SdkIcons.Sdk_default_icon">
-            <keyboard-shortcut keymap="$default" first-keystroke="control alt T" />
-            <add-to-group group-id="EditorPopupMenu"  anchor="first"/>
-        </action>
+
     </actions>
 
 </idea-plugin>
