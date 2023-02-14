@@ -11,11 +11,13 @@ class ChatGPTAPI {
 
     companion object {
         private val instance: ChatGPTAPI by lazy { ChatGPTAPI() }
-        private const val BASE_URL = "https://api.openai.com/v1/"
+        private const val BASE_URL = "https://api.openai.com/v1/";
+        private const val API_KEY = "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";
+
 
         @JvmName("getInstance1")
         fun getInstance() = instance
-        private const val API_KEY = "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"
+
 
     }
 

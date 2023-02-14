@@ -111,6 +111,9 @@
         </action>
 
 
+
+
+
         <action id="EditorBasics.EditorHandlerIllustration"
                 class="com.appsgateway.codemaster.editor.EditorHandlerIllustration"
                 text="Editor Add Caret" description="Adds a second caret below the existing one."
@@ -126,6 +129,15 @@
             <add-to-group group-id="EditorPopupMenu" anchor="first" />
         </action>
 
+
+
+        <action id="com.appsgateway.codemaster.action.TestFileCreatorAction"
+                class="com.appsgateway.codemaster.action.TestFileCreatorAction"
+                text="Create Test File" description="Create flutter test file"
+            icon="SdkIcons.Sdk_default_icon">
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt T" />
+            <add-to-group group-id="EditorPopupMenu"  anchor="first"/>
+        </action>
     </actions>
 
 </idea-plugin>
